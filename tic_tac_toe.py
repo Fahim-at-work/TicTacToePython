@@ -20,3 +20,15 @@ player_two = input('Player two enter your name: ')
 
 #setting the current player to player one that is X
 current_player = player_one
+
+def play_game():
+    # display initial board
+    display_board()
+    while game_is_on:
+        handle_turn(current_player)
+        check_if_game_over()
+        flip_player()
+    if winner == player_one or winner == player_two:
+        print(winner + " Won! ")
+    elif winner == None:
+        print("Tie")
