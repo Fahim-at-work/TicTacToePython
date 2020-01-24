@@ -32,3 +32,23 @@ def play_game():
         print(winner + " Won! ")
     elif winner == None:
         print("Tie")
+
+#handle the players
+def handle_turn(player):
+    print(player + "'s turn")
+    position = input('Enter a position from 1 - 9 ')
+    valid = False
+    while not valid:
+        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input('Enter a position from 1 - 9 ')
+        position = int(position) - 1
+        if board[position] == "-":
+            valid = True
+        else:
+            print('You cant go there')
+    if player == player_one:
+        board[position] = 'X'
+    else:
+        board[position] = 'O'
+    display_board()
+
