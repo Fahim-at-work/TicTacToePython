@@ -52,3 +52,24 @@ def handle_turn(player):
         board[position] = 'O'
     display_board()
 
+def check_if_game_over():
+    check_if_win()
+    check_if_tie()
+
+
+def check_if_win():
+    global winner
+    row_winner = check_row()
+    column_winner = check_column()
+    diagonal_winner = check_diagonal()
+
+    if row_winner:
+        winner = row_winner
+    elif column_winner:
+        winner = column_winner
+    elif diagonal_winner:
+        winner = diagonal_winner
+    else:
+        winner = None
+    return
+
