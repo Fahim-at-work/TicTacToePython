@@ -73,3 +73,17 @@ def check_if_win():
         winner = None
     return
 
+def check_row():
+    global game_is_on
+    row_one = board[0] == board[1] == board[2] != "-"
+    row_two = board[3] == board[4] == board[5] != "-"
+    row_three = board[6] == board[7] == board[8] != "-"
+    if row_one or row_two or row_three:
+        game_is_on = False
+    if row_one:
+        return board[0]
+    elif row_two:
+        return board[3]
+    elif row_three:
+        return board[6]
+    return
