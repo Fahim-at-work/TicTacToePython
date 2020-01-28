@@ -87,3 +87,18 @@ def check_row():
     elif row_three:
         return board[6]
     return
+
+def check_column():
+    global game_is_on
+    column_one = board[0] == board[3] == board[6] != "-"
+    column_two = board[1] == board[4] == board[7] != "-"
+    column_three = board[2] == board[5] == board[8] != "-"
+    if column_one or column_two or column_three:
+        game_is_on = False
+    if column_one:
+        return board[0]
+    elif column_two:
+        return board[1]
+    elif column_three:
+        return board[2]
+    return
