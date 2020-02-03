@@ -102,3 +102,15 @@ def check_column():
     elif column_three:
         return board[2]
     return
+
+def check_diagonal():
+    global game_is_on
+    diagonal_one = board[0] == board[4] == board[8] != "-"
+    diagonal_two = board[2] == board[4] == board[6] != "-"
+    if diagonal_one or diagonal_two:
+        game_is_on = False
+    if diagonal_one:
+        return board[0]
+    elif diagonal_two:
+        return board[2]
+    return
