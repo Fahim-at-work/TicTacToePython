@@ -114,3 +114,23 @@ def check_diagonal():
     elif diagonal_two:
         return board[2]
     return
+
+
+def check_if_tie():
+    global game_is_on
+    if "-" not in board:
+        game_is_on = False
+    return
+
+
+def flip_player():
+    global current_player
+    if current_player == player_one:
+        current_player = player_two
+    elif current_player == player_two:
+        current_player = player_one
+
+    return
+
+
+play_game()
